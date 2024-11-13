@@ -1,0 +1,180 @@
+:root {
+  --purple-primary: #7046e8;
+  --purple-light: #f0ebff;
+  --yellow: #fecb5e;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --white: #ffffff;
+  --radius: 20px;
+  --font-family: "DMSans";
+}
+
+@font-face {
+  font-family: "DMSans";
+  src: url("./assets/fonts/DMSans-VariableFont_opsz\,wght.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "DMSans";
+  src: url("./assets/fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "DMSans";
+  src: url("./assets/fonts/static/DMSans-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "DMSans";
+  src: url("./assets/fonts/static/DMSans-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "DMSans";
+  src: url("./assets/fonts/static/DMSans-MediumItalic.ttf");
+  font-weight: 500;
+  font-style: italic;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  padding: 2rem;
+}
+
+.dashboard-grid {
+  box-sizing: border-box;
+  display: grid;
+  max-width: 1120px;
+  grid-template-areas:
+    "pg fm fm sc"
+    "pg ma ps sc"
+    "pg gs fo fo";
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.card {
+  box-sizing: border-box;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.feature-main {
+  grid-area: fm;
+  font-size: 40px;
+  background-color: var(--purple-primary);
+  color: var(--white);
+}
+
+.manage-accounts {
+  grid-area: ma;
+  background-color: var(--white);
+}
+
+.posting-schedule {
+  grid-area: ps;
+  background-color: var(--yellow);
+}
+
+.schedule {
+  grid-area: sc;
+  background-color: var(--purple-light);
+}
+
+.followers {
+  grid-area: fo;
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: var(--purple-primary);
+  color: var(--white);
+}
+
+.growth-stats {
+  grid-area: gs;
+  background-color: var(--white);
+}
+
+.post-group {
+  grid-area: pg;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.create-post {
+  background-color: #fff5eb;
+}
+
+.ai-writing {
+  background-color: var(--yellow);
+}
+
+.multiple {
+  color: var(--yellow);
+}
+
+.quicker {
+  color: var(--purple-primary);
+  font-style: italic;
+}
+
+.faster {
+  font-style: italic;
+}
+
+.ratings {
+  margin-top: 2rem;
+}
+
+.stars {
+  font-size: 1.5rem;
+}
+
+.chat-bubble {
+  background: var(--white);
+  border-radius: 15px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.platform {
+  background: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin-right: 0.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-areas:
+      "fm"
+      "ma"
+      "ps"
+      "sc"
+      "fo"
+      "gs"
+      "pg";
+
+    grid-template-columns: 1fr;
+  }
+
+  .post-group {
+    grid-template-rows: auto auto;
+  }
+}
